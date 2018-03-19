@@ -1,0 +1,25 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int r1,h1,r2,h2;
+	double v1,v2;
+	string input;
+	cin>> input;
+	int firstc=input.find(",");//2
+	int secondc=input.find(",", firstc+1);//5
+	int thirdc=input.find(",", secondc+1);//9
+	cout<<firstc<<secondc<<thirdc;
+	r1=stoi(input.substr(0,firstc))/10;
+	h1=stoi(input.substr(firstc+1,secondc-firstc-1))/10;
+	r2=stoi(input.substr(secondc+1,thirdc-secondc-1))/10;
+	h2=stoi(input.substr(thirdc+1))/10;
+	 
+	 v1=r1*r1*h1*3.1415;
+	 v2=r2*r2*h2*3.1415;
+	 if(v1>v2)
+	 cout<<v1<<endl;
+	 else
+	 cout<<v2<<endl;
+}
